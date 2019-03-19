@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.example.LoginFragment">
+    tools:context=".ui.example.login.LoginFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="193dp"
-            android:contentDescription="@string/fragment_login_imageView1_description"
+            android:contentDescription="@string/fragment_login_banner_description_image_view"
             android:src="@drawable/login_cover"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="@string/fragment_login_email_hint"
+            android:hint="@string/fragment_login_email_hint_edit_text"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
