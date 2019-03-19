@@ -1,4 +1,4 @@
-package ar.com.wolox.android.example.ui.example;
+package ar.com.wolox.android.example.ui.example.login;
 
 import ar.com.wolox.android.R;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;

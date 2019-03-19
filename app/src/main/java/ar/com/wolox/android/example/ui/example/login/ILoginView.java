@@ -1,4 +1,4 @@
-package ar.com.wolox.android.example.ui.example;
+package ar.com.wolox.android.example.ui.example.login;
 
 /**
  * Login view
