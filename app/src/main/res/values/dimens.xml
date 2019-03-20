@@ -45,5 +45,6 @@
     <dimen name="font_big">22sp</dimen>
     <dimen name="font_huge">24sp</dimen>
 
-    <!-- Add your custom dimens here -->
+    <!-- Login -->
+    <dimen name="fragment_login_buttons_and_edit_text_height">56dp</dimen>
 </resources>

@@ -58,6 +58,6 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void onUsernameSaved() {
-
+        //TODO: launch next activity
     }
 }

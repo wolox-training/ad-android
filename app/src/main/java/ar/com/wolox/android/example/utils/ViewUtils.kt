@@ -36,13 +36,13 @@ fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false):
 /**
  * Creates a [GradientDrawable] Drawable with the given parameters.
  * When specifying only [color] that color will be used as the background color.
- * If both [color] and [endColor] are provided, [color] will be used as the start color of the gradient.
+ * If both [color] and [endColor] are provided, [color] will be used as the start color of the gradient_fragment_login_banner.
  *
  * @param color Color of the drawable. In case [endColor] is provided, this'll act as starting color.
- * @param endColor End color of the gradient. By default is "-1".
+ * @param endColor End color of the gradient_fragment_login_banner. By default is "-1".
  * @param cornerRadius Corner radius of the drawable **In DP**. By default is 4dp.
- * @param orientation Orientation of the gradient. By default is [Orientation.TL_BR].
- * @return [GradientDrawable] with the gradient
+ * @param orientation Orientation of the gradient_fragment_login_banner. By default is [Orientation.TL_BR].
+ * @return [GradientDrawable] with the gradient_fragment_login_banner
  */
 fun Resources.createRoundDrawable(
     @ColorInt color: Int,
