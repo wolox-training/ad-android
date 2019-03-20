@@ -47,4 +47,7 @@
 
     <!-- Login -->
     <dimen name="fragment_login_buttons_and_edit_text_height">56dp</dimen>
+    <dimen name="fragment_login_banner_height">193dp</dimen>
+    <dimen name="fragment_login_wolox_logo_margin_top">132dp</dimen>
+
 </resources>
