@@ -14,7 +14,7 @@ class LoginPresenter extends BasePresenter<ILoginView> {
 
     }
 //    @Inject
-//    private UserSession mUserSession;
+//    UserSession mUserSession;
 //
 //    void storeUsername(String text) {
 //        mUserSession.setUsername(text);
