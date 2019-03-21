@@ -6,4 +6,5 @@ package ar.com.wolox.android.example.ui.example.login;
 interface ILoginView {
 
     void onUsernameSaved();
+
 }
