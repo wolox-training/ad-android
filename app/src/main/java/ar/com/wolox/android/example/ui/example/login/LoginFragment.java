@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.example.ExampleActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
