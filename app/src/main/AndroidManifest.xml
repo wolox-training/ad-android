@@ -21,6 +21,12 @@
         </activity>
         <activity android:name=".example.ui.example.ExampleActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".example.ui.example.home.HomeActivity">
+
+        </activity>
+        <activity android:name=".example.ui.example.root.RootActivity">
+
+        </activity>
     </application>
 
 </manifest>
