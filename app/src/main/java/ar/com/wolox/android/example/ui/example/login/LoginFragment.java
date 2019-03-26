@@ -16,14 +16,11 @@ import butterknife.BindView;
  */
 public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILoginView {
 
-    @BindView(R.id.vLoginEmailEditText)
-    EditText vLoginEmailEditText;
+    @BindView(R.id.vLoginEmailEditText) EditText vLoginEmailEditText;
 
-    @BindView(R.id.vLoginPasswordEditText)
-    EditText vLoginPasswordEditText;
+    @BindView(R.id.vLoginPasswordEditText) EditText vLoginPasswordEditText;
 
-    @BindView(R.id.vLoginLogInButton)
-    Button vLoginLogInButton;
+    @BindView(R.id.vLoginLogInButton) Button vLoginLogInButton;
 
     @Override
     public void init() {
