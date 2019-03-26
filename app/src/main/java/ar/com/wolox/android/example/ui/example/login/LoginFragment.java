@@ -28,8 +28,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     private void loadLoginData() {
-        Context context = getActivity();
-        SharedPreferences sharedPreferences = context.getSharedPreferences(
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(
                 getString(R.string.shared_preference_login), Context.MODE_PRIVATE);
         vLoginEmailEditText.setText(sharedPreferences.getString(getString(R.string.
                 shared_preference_email), ""));
@@ -80,8 +79,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     private void saveLoginDataOnSharedPreferences(String email, String password) {
-        Context context = getActivity();
-        SharedPreferences sharedPreferences = context.getSharedPreferences(
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(
                 getString(R.string.shared_preference_login), Context.MODE_PRIVATE);
         sharedPreferences.edit()
             .putString(getString(R.string.shared_preference_email), email)
