@@ -23,10 +23,16 @@
     <string name="fragment_login_by_joining">By joining you agree to our <u>Terms &amp; Conditions</u></string>
     <string name="fragment_login_empty_field_error_message">This field can not be empty</string>
     <string name="fragment_login_invalid_email_error_message">Invalid email format. An example of a valid email format can be <i>example@domain.com</i></string>
+    <string name="fragment_login_termns_and_conditions_uri">https://www.wolox.com.ar/</string>
+
+    <!-- Home -->
+    <string name="fragment_home_welcome_text_view">WELCOME TO HOME SCREEN!</string>
+    <string name="fragment_home_logout_button">LOGOUT</string>
 
     <!-- Login Shared Preferences -->
     <string name="shared_preference_login">login</string>
     <string name="shared_preference_email">email</string>
     <string name="shared_preference_password">password</string>
+    <string name="shared_preference_login_status">login-status</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package ar.com.wolox.android.example.ui.example.home;
+package ar.com.wolox.android.example.ui.example.signup;
 
 import ar.com.wolox.android.R;
 import ar.com.wolox.wolmo.core.activity.WolmoActivity;
@@ -6,11 +6,11 @@ import ar.com.wolox.wolmo.core.activity.WolmoActivity;
 /**
  *
  */
-public class HomeActivity extends WolmoActivity {
+public class SignUpActivity extends WolmoActivity {
 
     @Override
     protected void init() {
-        replaceFragment(R.id.vActivityBaseContent, new HomeFragment());
+        replaceFragment(R.id.vActivityBaseContent, new SignUpFragment());
     }
 
     @Override
