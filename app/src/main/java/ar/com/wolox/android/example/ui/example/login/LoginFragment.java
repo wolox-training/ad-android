@@ -3,11 +3,14 @@ package ar.com.wolox.android.example.ui.example.login;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import ar.com.wolox.android.R;
-import ar.com.wolox.android.example.ui.example.ExampleActivity;
+import ar.com.wolox.android.example.ui.example.home.HomeActivity;
+import ar.com.wolox.android.example.ui.example.signup.SignUpActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
 import butterknife.BindView;
 
@@ -16,11 +19,11 @@ import butterknife.BindView;
  */
 public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILoginView {
 
+    @BindView(R.id.vLoginTermsAndConditionsTextView) TextView vLoginTermsAndConditionsTextView;
     @BindView(R.id.vLoginEmailEditText) EditText vLoginEmailEditText;
-
     @BindView(R.id.vLoginPasswordEditText) EditText vLoginPasswordEditText;
-
     @BindView(R.id.vLoginLogInButton) Button vLoginLogInButton;
+    @BindView(R.id.vLoginSignUpButton) Button vLoginSignUpButton;
 
     @Override
     public void init() {
@@ -51,6 +54,21 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
                 getPresenter().onLoginValidation(email, password);
             }
         });
+
+        vLoginSignUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), SignUpActivity.class));
+            }
+        });
+
+        vLoginTermsAndConditionsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(
+                        R.string.fragment_login_termns_and_conditions_uri))));
+            }
+        });
     }
 
     @Override
@@ -74,7 +92,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     public void onValidatedLogin() {
         saveLoginDataOnSharedPreferences(vLoginEmailEditText.getText().toString(),
                 vLoginPasswordEditText.getText().toString());
-        Intent intent = new Intent(getContext(), ExampleActivity.class);
+        Intent intent = new Intent(getContext(), HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
@@ -84,6 +103,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
         sharedPreferences.edit()
             .putString(getString(R.string.shared_preference_email), email)
             .putString(getString(R.string.shared_preference_password), password)
+            .putBoolean(getString(R.string.shared_preference_login_status), true)
             .apply();
     }
 }

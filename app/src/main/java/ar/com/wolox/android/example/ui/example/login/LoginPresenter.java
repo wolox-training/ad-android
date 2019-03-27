@@ -10,8 +10,7 @@ import ar.com.wolox.wolmo.core.presenter.BasePresenter;
  */
 class LoginPresenter extends BasePresenter<ILoginView> {
 
-    @Inject
-    LoginPresenter() {}
+    @Inject LoginPresenter() {}
 
     void onLoginValidation(String email, String password) {
         boolean isValidEmail = validateEmail(email);
