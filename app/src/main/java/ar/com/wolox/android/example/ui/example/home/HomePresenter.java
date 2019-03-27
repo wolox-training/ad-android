@@ -9,6 +9,5 @@ import ar.com.wolox.wolmo.core.presenter.BasePresenter;
  */
 class HomePresenter extends BasePresenter<IHomeView> {
 
-    @Inject
-    HomePresenter() {}
+    @Inject HomePresenter() {}
 }

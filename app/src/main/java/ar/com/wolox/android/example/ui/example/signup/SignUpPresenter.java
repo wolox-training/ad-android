@@ -9,6 +9,5 @@ import ar.com.wolox.wolmo.core.presenter.BasePresenter;
  */
 public class SignUpPresenter extends BasePresenter<ISignUpView> {
 
-    @Inject
-    SignUpPresenter() {}
+    @Inject SignUpPresenter() {}
 }
