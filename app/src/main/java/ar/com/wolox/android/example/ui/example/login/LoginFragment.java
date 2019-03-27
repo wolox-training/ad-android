@@ -106,4 +106,19 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
             .putBoolean(getString(R.string.shared_preference_login_status), true)
             .apply();
     }
+
+    @Override
+    public void onInvalidLoginData() {
+        //TODO: toask message "Incorrect email or password"
+    }
+
+    @Override
+    public void onServerError() {
+        //TODO: toast message "Sorry, (bla bla) try again later"
+    }
+
+    @Override
+    public void onInvalidCallError() {
+        //TODO: toast "onInvalidCallError toast for test"
+    }
 }

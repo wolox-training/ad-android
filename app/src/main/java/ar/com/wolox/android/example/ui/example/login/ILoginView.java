@@ -13,4 +13,9 @@ interface ILoginView {
 
     void onValidatedLogin();
 
+    void onServerError();
+
+    void onInvalidCallError();
+
+    void onInvalidLoginData();
 }
