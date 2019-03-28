@@ -11,7 +11,7 @@ interface ILoginView {
 
     void onEmptyPassword();
 
-    void onValidatedLogin();
+    void onValidLoginData();
 
     void onServerError();
 

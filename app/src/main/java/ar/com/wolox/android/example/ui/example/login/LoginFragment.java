@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.example.home.HomeActivity;
 import ar.com.wolox.android.example.ui.example.signup.SignUpActivity;
@@ -51,7 +52,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
             public void onClick(View v) {
                 String email = vLoginEmailEditText.getText().toString();
                 String password = vLoginPasswordEditText.getText().toString();
-                getPresenter().onLoginValidation(email, password);
+                getPresenter().onLoginValidation(email, password, getString(
+                        R.string.rest_api_base_url));
             }
         });
 
@@ -89,7 +91,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void onValidatedLogin() {
+    public void onValidLoginData() {
         saveLoginDataOnSharedPreferences(vLoginEmailEditText.getText().toString(),
                 vLoginPasswordEditText.getText().toString());
         Intent intent = new Intent(getContext(), HomeActivity.class);
@@ -109,16 +111,22 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void onInvalidLoginData() {
-        //TODO: toask message "Incorrect email or password"
+        Toast toast = Toast.makeText(getContext(), getString(
+                R.string.fragment_login_invalid_email_or_password_toast), Toast.LENGTH_LONG);
+        toast.show();
     }
 
     @Override
     public void onServerError() {
-        //TODO: toast message "Sorry, (bla bla) try again later"
+        Toast toast = Toast.makeText(getContext(), getString(
+                R.string.fragment_login_server_error_toast), Toast.LENGTH_LONG);
+        toast.show();
     }
 
     @Override
     public void onInvalidCallError() {
-        //TODO: toast "onInvalidCallError toast for test"
+        Toast toast = Toast.makeText(getContext(), getString(
+                R.string.fragment_login_invalid_call_error_toast), Toast.LENGTH_LONG);
+        toast.show();
     }
 }
