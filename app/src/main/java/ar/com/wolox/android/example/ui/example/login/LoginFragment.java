@@ -91,7 +91,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void onValidLoginData() {
+    public void onValidatedLogin() {
         saveLoginDataOnSharedPreferences(vLoginEmailEditText.getText().toString(),
                 vLoginPasswordEditText.getText().toString());
         Intent intent = new Intent(getContext(), HomeActivity.class);
