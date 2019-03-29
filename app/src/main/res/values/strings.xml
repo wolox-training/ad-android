@@ -28,9 +28,6 @@
     <string name="fragment_login_server_error_toast">Oops, can\'t login. Please, try again later</string>
     <string name="fragment_login_invalid_call_error_toast">Oops, sorry but this is an internal error</string>
 
-    <!-- Database URI -->
-    <string name="rest_api_base_url">https://android-training.herokuapp.com</string>
-
     <!-- Home -->
     <string name="fragment_home_welcome_text_view">WELCOME TO HOME SCREEN!</string>
     <string name="fragment_home_logout_button">LOGOUT</string>

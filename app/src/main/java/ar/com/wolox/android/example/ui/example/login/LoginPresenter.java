@@ -8,31 +8,27 @@ import javax.inject.Inject;
 import ar.com.wolox.android.example.model.User;
 import ar.com.wolox.android.example.network.UserService;
 import ar.com.wolox.wolmo.core.presenter.BasePresenter;
+import ar.com.wolox.wolmo.networking.retrofit.RetrofitServices;
 import ar.com.wolox.wolmo.networking.retrofit.callback.NetworkCallback;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  *
  */
 class LoginPresenter extends BasePresenter<ILoginView> {
 
+    @Inject RetrofitServices mRetrofitService;
+
     @Inject LoginPresenter() {}
 
-    void onLoginValidation(String email, String password, String dbBaseUrl) {
+    void onLoginValidation(String email, String password) {
         boolean isValidEmailFormat = validateEmailFormat(email);
         boolean isValidPasswordFormat = validatePasswordFormat(password);
 
         if (isValidEmailFormat && isValidPasswordFormat) {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(dbBaseUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            UserService userService = retrofit.create(UserService.class);
-            Call<List<User>> userCall = userService.getUserByEmail(email);
-            userCall.enqueue(new NetworkCallback<List<User>>() {
+            mRetrofitService.getService(UserService.class).getUserByEmail(email).enqueue(
+                    new NetworkCallback<List<User>>() {
+
                 @Override
                 public void onResponseSuccessful(@Nullable List<User> users) {
                     if (users != null && !users.isEmpty() && users.get(0).getPassword().

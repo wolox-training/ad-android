@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+import javax.inject.Inject;
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.example.home.HomeActivity;
 import ar.com.wolox.android.example.ui.example.signup.SignUpActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
+import ar.com.wolox.wolmo.core.util.ToastFactory;
 import butterknife.BindView;
 
 /**
@@ -25,6 +26,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @BindView(R.id.vLoginPasswordEditText) EditText vLoginPasswordEditText;
     @BindView(R.id.vLoginLogInButton) Button vLoginLogInButton;
     @BindView(R.id.vLoginSignUpButton) Button vLoginSignUpButton;
+
+    @Inject ToastFactory mToastFactory;
 
     @Override
     public void init() {
@@ -52,8 +55,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
             public void onClick(View v) {
                 String email = vLoginEmailEditText.getText().toString();
                 String password = vLoginPasswordEditText.getText().toString();
-                getPresenter().onLoginValidation(email, password, getString(
-                        R.string.rest_api_base_url));
+                getPresenter().onLoginValidation(email, password);
             }
         });
 
@@ -111,22 +113,16 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void onInvalidLoginData() {
-        Toast toast = Toast.makeText(getContext(), getString(
-                R.string.fragment_login_invalid_email_or_password_toast), Toast.LENGTH_LONG);
-        toast.show();
+        mToastFactory.show(R.string.fragment_login_invalid_email_or_password_toast);
     }
 
     @Override
     public void onServerError() {
-        Toast toast = Toast.makeText(getContext(), getString(
-                R.string.fragment_login_server_error_toast), Toast.LENGTH_LONG);
-        toast.show();
+        mToastFactory.show(R.string.fragment_login_server_error_toast);
     }
 
     @Override
     public void onInvalidCallError() {
-        Toast toast = Toast.makeText(getContext(), getString(
-                R.string.fragment_login_invalid_call_error_toast), Toast.LENGTH_LONG);
-        toast.show();
+        mToastFactory.show(R.string.fragment_login_invalid_call_error_toast);
     }
 }

@@ -11,17 +11,18 @@ import ar.com.wolox.android.example.network.UserService;
 import ar.com.wolox.android.example.ui.example.home.HomeActivity;
 import ar.com.wolox.android.example.ui.example.login.LoginActivity;
 import ar.com.wolox.wolmo.core.activity.WolmoActivity;
+import ar.com.wolox.wolmo.networking.retrofit.RetrofitServices;
 import ar.com.wolox.wolmo.networking.retrofit.callback.NetworkCallback;
 import java.util.List;
+import javax.inject.Inject;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  *
  */
 public class RootActivity extends WolmoActivity {
+
+    @Inject RetrofitServices mRetrofitServices;
 
     @Override
     protected void init() {
@@ -52,26 +53,17 @@ public class RootActivity extends WolmoActivity {
     }
 
     private void validateLoginWithDatabase(String email, String password) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(getString(R.string.rest_api_base_url))
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        UserService userService = retrofit.create(UserService.class);
-        Call<List<User>> userCall = userService.getUserByEmail(email);
-        userCall.enqueue(new NetworkCallback<List<User>>() {
+        mRetrofitServices.getService(UserService.class).getUserByEmail(email).enqueue(
+                new NetworkCallback<List<User>>() {
+
             @Override
             public void onResponseSuccessful(@Nullable List<User> users) {
-                Intent intent;
-
                 if (users != null && !users.isEmpty() && users.get(0).getPassword().
                         equals(password)) {
-                    intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    launchHomeActivity();
                 } else {
-                    intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    launchLoginActivity();
                 }
-
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
             }
 
             @Override
@@ -88,6 +80,12 @@ public class RootActivity extends WolmoActivity {
 
     private void launchLoginActivity() {
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    private void launchHomeActivity() {
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
