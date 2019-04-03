@@ -14,6 +14,7 @@ import butterknife.BindView;
  *
  */
 public class HomeFragment extends WolmoFragment<HomePresenter> implements IHomeView {
+
     @BindView(R.id.vHomeLogoutButton) Button vHomeLogoutButton;
 
     @Override

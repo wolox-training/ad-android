@@ -15,7 +15,7 @@ import okhttp3.ResponseBody;
 /**
  *
  */
-class LoginPresenter extends BasePresenter<ILoginView> {
+public class LoginPresenter extends BasePresenter<ILoginView> {
 
     @Inject RetrofitServices mRetrofitService;
 
