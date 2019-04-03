@@ -1,5 +1,6 @@
 package ar.com.wolox.android.example.ui.example.login;
 
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -21,7 +22,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
 
     @Inject LoginPresenter() {}
 
-    void onLoginValidation(String email, String password) {
+    void onLoginValidation(@NonNull String email, @NonNull String password) {
         boolean isValidEmailFormat = validateEmailFormat(email);
         boolean isValidPasswordFormat = validatePasswordFormat(password);
 
@@ -52,7 +53,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         }
     }
 
-    private boolean validateEmailFormat(String email) {
+    private boolean validateEmailFormat(@NonNull String email) {
         boolean isValidEmailFormat = false;
 
         if (TextUtils.isEmpty(email)) {
@@ -66,7 +67,7 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
         return isValidEmailFormat;
     }
 
-    private boolean validatePasswordFormat(String password) {
+    private boolean validatePasswordFormat(@NonNull String password) {
         boolean isValidPasswordFormat = false;
 
         if (TextUtils.isEmpty(password)) {
