@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
-
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.example.login.LoginActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
@@ -15,6 +14,7 @@ import butterknife.BindView;
  *
  */
 public class HomeFragment extends WolmoFragment<HomePresenter> implements IHomeView {
+
     @BindView(R.id.vHomeLogoutButton) Button vHomeLogoutButton;
 
     @Override

@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import javax.inject.Inject;
+
 import ar.com.wolox.android.R;
 import ar.com.wolox.android.example.ui.example.home.HomeActivity;
 import ar.com.wolox.android.example.ui.example.signup.SignUpActivity;
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment;
+import ar.com.wolox.wolmo.core.util.ToastFactory;
 import butterknife.BindView;
 
 /**
@@ -24,6 +28,8 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     @BindView(R.id.vLoginPasswordEditText) EditText vLoginPasswordEditText;
     @BindView(R.id.vLoginLogInButton) Button vLoginLogInButton;
     @BindView(R.id.vLoginSignUpButton) Button vLoginSignUpButton;
+
+    @Inject ToastFactory mToastFactory;
 
     @Override
     public void init() {
@@ -89,7 +95,7 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
     }
 
     @Override
-    public void onValidatedLogin() {
+    public void onValidLoginData() {
         saveLoginDataOnSharedPreferences(vLoginEmailEditText.getText().toString(),
                 vLoginPasswordEditText.getText().toString());
         Intent intent = new Intent(getContext(), HomeActivity.class);
@@ -105,5 +111,20 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
             .putString(getString(R.string.shared_preference_password), password)
             .putBoolean(getString(R.string.shared_preference_login_status), true)
             .apply();
+    }
+
+    @Override
+    public void onInvalidLoginData() {
+        mToastFactory.show(R.string.fragment_login_invalid_email_or_password_toast);
+    }
+
+    @Override
+    public void onServerError() {
+        mToastFactory.show(R.string.fragment_login_server_error_toast);
+    }
+
+    @Override
+    public void onInvalidCallError() {
+        mToastFactory.show(R.string.fragment_login_invalid_call_error_toast);
     }
 }

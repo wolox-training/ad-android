@@ -32,7 +32,7 @@ class BootstrapApplication : WolmoApplication() {
 
     private fun buildDaggerNetworkingComponent(): NetworkingComponent {
         val builder = DaggerNetworkingComponent.builder().baseUrl(
-                BaseConfiguration.EXAMPLE_CONFIGURATION_KEY)
+                BaseConfiguration.USER_DB_REST_API_BASE_URL)
                 .gsonNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
 
         if (BuildConfig.DEBUG) {
