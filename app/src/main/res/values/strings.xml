@@ -29,8 +29,9 @@
     <string name="fragment_login_invalid_call_error_toast">Oops, sorry but this is an internal error</string>
 
     <!-- Home -->
-    <string name="fragment_home_welcome_text_view">WELCOME TO HOME SCREEN!</string>
-    <string name="fragment_home_logout_button">LOGOUT</string>
+    <string name="fragment_home_wolox_toolbar">Wolox</string>
+    <string name="fragment_home_news_tab_title">NEWS</string>
+    <string name="fragment_home_profile_tab_title">PROFILE</string>
 
     <!-- Login Shared Preferences -->
     <string name="shared_preference_login">login</string>

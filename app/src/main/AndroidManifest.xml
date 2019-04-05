@@ -28,6 +28,7 @@
 
         <activity
             android:name=".example.ui.example.home.HomeActivity"
+            android:label="HOMETE"
             android:screenOrientation="portrait"/>
 
         <activity
