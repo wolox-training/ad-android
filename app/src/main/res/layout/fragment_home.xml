@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/fragment_home_wolox_toolbar"
                 android:textStyle="bold"
+                android:textSize="@dimen/fragment_home_toolbar_title_font_size"
                 android:textColor="@color/black"
                 android:layout_marginStart="@dimen/static_spacing_largest"
                 app:layout_constraintTop_toTopOf="parent"

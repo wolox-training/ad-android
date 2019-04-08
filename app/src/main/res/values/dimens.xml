@@ -52,6 +52,6 @@
 
     <!-- Home -->
     <dimen name="fragment_home_toolbar_height">56dp</dimen>
-
+    <dimen name="fragment_home_toolbar_title_font_size">16sp</dimen>
 
 </resources>
