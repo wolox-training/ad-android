@@ -9,7 +9,5 @@ class HomeProfileFragment @Inject constructor() : WolmoFragment<BasePresenter<An
 
     override fun init() {}
 
-    override fun layout(): Int {
-        return R.layout.fragment_home_profile
-    }
+    override fun layout(): Int = R.layout.fragment_home_profile
 }

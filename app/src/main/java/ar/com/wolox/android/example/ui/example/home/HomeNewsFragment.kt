@@ -9,7 +9,5 @@ class HomeNewsFragment @Inject constructor() : WolmoFragment<BasePresenter<Any>>
 
     override fun init() {}
 
-    override fun layout(): Int {
-        return R.layout.fragment_home_news
-    }
+    override fun layout(): Int = R.layout.fragment_home_news
 }
