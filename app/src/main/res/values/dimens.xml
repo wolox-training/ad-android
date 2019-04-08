@@ -50,4 +50,8 @@
     <dimen name="fragment_login_banner_height">193dp</dimen>
     <dimen name="fragment_login_wolox_logo_margin_top">132dp</dimen>
 
+    <!-- Home -->
+    <dimen name="fragment_home_toolbar_height">56dp</dimen>
+    <dimen name="fragment_home_toolbar_title_font_size">16sp</dimen>
+
 </resources>

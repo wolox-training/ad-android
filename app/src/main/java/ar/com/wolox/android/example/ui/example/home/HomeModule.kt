@@ -11,4 +11,10 @@ abstract class HomeModule {
 
     @ContributesAndroidInjector
     internal abstract fun homeFragment(): HomeFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun homeNewsFragment(): HomeNewsFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun homeProfileFragment(): HomeProfileFragment
 }

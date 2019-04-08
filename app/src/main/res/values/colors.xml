@@ -7,4 +7,5 @@
     <color name="colorAccent">#8DC63F</color>
     <color name="colorWoloxGreen">#A5CD39</color>
     <color name="colorWoloxBlue">#00ADEE</color>
+    <color name="black">#000000</color>
 </resources>
