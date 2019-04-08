@@ -16,15 +16,6 @@ class HomeFragment : WolmoFragment<HomePresenter>(), IHomeView {
 
     private lateinit var fragmentPagerAdapter: SimpleFragmentPagerAdapter
 
-    companion object {
-
-        enum class TabIndex(val index: Int) {
-
-            NEWS(0),
-            PROFILE(1)
-        }
-    }
-
     override fun init() {
         fragmentPagerAdapter = SimpleFragmentPagerAdapter(childFragmentManager)
         fragmentPagerAdapter.apply {
@@ -39,4 +30,13 @@ class HomeFragment : WolmoFragment<HomePresenter>(), IHomeView {
     }
 
     override fun layout(): Int = R.layout.fragment_home
+
+    companion object {
+
+        enum class TabIndex(val index: Int) {
+
+            NEWS(0),
+            PROFILE(1)
+        }
+    }
 }
