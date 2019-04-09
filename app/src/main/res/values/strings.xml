@@ -32,12 +32,14 @@
     <string name="fragment_home_wolox_toolbar">Wolox</string>
     <string name="fragment_home_news_tab_title">NEWS</string>
     <string name="fragment_home_profile_tab_title">PROFILE</string>
+    <string name="fragment_home_news_item_image_description">Image</string>
+    <string name="fragment_home_news_like_button_description">Like</string>
+    <string name="fragment_home_news_no_results_to_show">NO RESULTS TO SHOW</string>
 
     <!-- Login Shared Preferences -->
     <string name="shared_preference_login">login</string>
     <string name="shared_preference_email">email</string>
     <string name="shared_preference_password">password</string>
     <string name="shared_preference_login_status">login-status</string>
-    <string name="fragment_home_news_item_image_description">Image</string>
 
 </resources>
