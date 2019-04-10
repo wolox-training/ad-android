@@ -21,11 +21,9 @@ class HomeNewsPresenter : BasePresenter<IHomeNewsView>() {
                     }
 
                     override fun onCallFailure(throwable: Throwable) {
-
                     }
 
                     override fun onResponseFailed(body: ResponseBody?, code: Int) {
-
                     }
                 }
         )
