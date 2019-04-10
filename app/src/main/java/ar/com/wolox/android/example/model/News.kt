@@ -1,13 +1,18 @@
 package ar.com.wolox.android.example.model
 
-// TODO FOR NEXT PR (Backend): this is an example of News Model, improve it later!
-class News(val title: String, val description: String) {
+data class News(val id: Int, val userId: Int, val createdAt: String, val title: String,
+           val picture: String, val text: String, val likes: List<Int>) {
 
     override fun equals(other: Any?): Boolean {
         if (other == null || other !is News) {
             return false
         }
 
-        return other.title == this.title && other.description == this.description
+        return this.id == other.id
+    }
+
+    fun hasSameContent(other: News): Boolean {
+        return this == other || (this.title == other.title && this.text == other.text &&
+                this.createdAt == other.createdAt && this.picture == other.picture)
     }
 }

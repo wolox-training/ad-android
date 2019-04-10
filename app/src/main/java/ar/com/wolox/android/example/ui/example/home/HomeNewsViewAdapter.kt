@@ -24,7 +24,7 @@ class HomeNewsViewAdapter(private val dataSet: List<News>) :
     override fun onBindViewHolder(holder: NewsItemViewHolder, position: Int) {
         val itemData: News = dataSet[position]
         holder.title.text = itemData.title
-        holder.description.text = itemData.description
+        holder.description.text = itemData.text
     }
 
     override fun getItemCount(): Int = dataSet.size
@@ -37,7 +37,7 @@ class HomeNewsViewAdapter(private val dataSet: List<News>) :
 
     class NewsDiffCallback : DiffUtil.ItemCallback<News>() {
 
-        override fun areContentsTheSame(n0: News, n1: News): Boolean = n0 == n1
+        override fun areContentsTheSame(n0: News, n1: News): Boolean = n0.hasSameContent(n1)
 
         override fun areItemsTheSame(n0: News, n1: News): Boolean = n0 == n1
     }
