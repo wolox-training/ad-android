@@ -18,7 +18,7 @@ class HomeNewsFragment @Inject constructor() : WolmoFragment<HomeNewsPresenter>(
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
 
-        presenter.onFirstInit()
+        presenter.onInit()
     }
 
     override fun setListeners() {
@@ -26,6 +26,7 @@ class HomeNewsFragment @Inject constructor() : WolmoFragment<HomeNewsPresenter>(
             val intent = Intent(context, SignUpActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
             }
+
             startActivity(intent)
         }
     }
