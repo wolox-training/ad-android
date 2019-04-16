@@ -18,15 +18,35 @@ class HomeNewsPresenter @Inject constructor() : BasePresenter<IHomeNewsView>() {
                 object : NetworkCallback<List<News>>() {
 
                     override fun onResponseSuccessful(news: List<News>?) {
-                        view.onNewsGetFromDatabase(triplicateNews(news))
+                        view.onNewsGotFromDatabase(triplicateNews(news))
                     }
 
                     override fun onCallFailure(throwable: Throwable) {
-                        //TODO: if is necessary, we can call a function on view to make a Toast
+                        // TODO: if is necessary, we can call a function on view to make a Toast
                     }
 
                     override fun onResponseFailed(body: ResponseBody?, code: Int) {
-                        //TODO: if is necessary, we can call a function on view to make a Toast
+                        // TODO: if is necessary, we can call a function on view to make a Toast
+                    }
+                }
+        )
+    }
+
+    fun onRefresh() {
+        // This must check for newest news. I will get all of them again because of the API design
+        retrofitService.getService(NewsService::class.java).getNews().enqueue(
+                object : NetworkCallback<List<News>>() {
+
+                    override fun onResponseSuccessful(news: List<News>?) {
+                        view.onRefresh(news)
+                    }
+
+                    override fun onCallFailure(throwable: Throwable) {
+                        // TODO: if is necessary, we can call a function on view to make a Toast
+                    }
+
+                    override fun onResponseFailed(body: ResponseBody?, code: Int) {
+                        // TODO: if is necessary, we can call a function on view to make a Toast
                     }
                 }
         )
