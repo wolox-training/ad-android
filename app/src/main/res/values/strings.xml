@@ -25,8 +25,6 @@
     <string name="fragment_login_invalid_email_error_message">Invalid email format. An example of a valid email format can be <i>example@domain.com</i></string>
     <string name="fragment_login_termns_and_conditions_uri">https://www.wolox.com.ar/</string>
     <string name="fragment_login_invalid_email_or_password_toast">Invalid email or password</string>
-    <string name="fragment_login_server_error_toast">Oops, can\'t login. Please, try again later</string>
-    <string name="fragment_login_invalid_call_error_toast">Oops, sorry but this is an internal error</string>
 
     <!-- Home -->
     <string name="fragment_home_wolox_toolbar">Wolox</string>
@@ -41,5 +39,9 @@
     <string name="shared_preference_email">email</string>
     <string name="shared_preference_password">password</string>
     <string name="shared_preference_login_status">login-status</string>
+
+    <!-- General Toast Messages -->
+    <string name="server_error_toast">Oops, can\'t login. Please, try again later</string>
+    <string name="invalid_call_error_toast">Oops, sorry but this is an internal error</string>
 
 </resources>

@@ -102,6 +102,8 @@ buildscript {
     ext.junit_version               = '4.12'
     ext.mockito_version             = '2.13.0'
     ext.assertj_version             = '3.9.0'
+    ext.facebook_fresco_version     = '1.13.0'
+    ext.pretty_time_version         = '4.0.1.Final'
 }
 
 dependencies {
@@ -135,6 +137,8 @@ dependencies {
     releaseImplementation "com.readystatesoftware.chuck:library-no-op:$chuck_version"
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
+    implementation "com.facebook.fresco:fresco:$facebook_fresco_version"
+    implementation "org.ocpsoft.prettytime:prettytime:$pretty_time_version"
 
     // Testing dependencies
     testImplementation "junit:junit:$junit_version"

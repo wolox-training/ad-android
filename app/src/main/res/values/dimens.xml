@@ -55,5 +55,6 @@
     <dimen name="fragment_home_toolbar_title_font_size">16sp</dimen>
     <dimen name="height_recycle_view_items">88dp</dimen>
     <dimen name="text_size_recycle_view_item_title">16sp</dimen>
+    <dimen name="home_news_item_image_size">50dp</dimen>
 
 </resources>
