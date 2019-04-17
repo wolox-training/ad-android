@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class HomeNewsFragment @Inject constructor() : WolmoFragment<HomeNewsPresenter>(), IHomeNewsView {
 
-    @Inject private lateinit var toastFactory: ToastFactory
+    @Inject internal lateinit var toastFactory: ToastFactory
     private val newsViewAdapter = HomeNewsViewAdapter()
     private val newsList = LinkedList<News>()
 
