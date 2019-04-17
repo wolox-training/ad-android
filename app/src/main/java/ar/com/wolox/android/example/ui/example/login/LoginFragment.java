@@ -120,11 +120,11 @@ public class LoginFragment extends WolmoFragment<LoginPresenter> implements ILog
 
     @Override
     public void onServerError() {
-        mToastFactory.show(R.string.fragment_login_server_error_toast);
+        mToastFactory.show(R.string.server_error_toast);
     }
 
     @Override
     public void onInvalidCallError() {
-        mToastFactory.show(R.string.fragment_login_invalid_call_error_toast);
+        mToastFactory.show(R.string.invalid_call_error_toast);
     }
 }

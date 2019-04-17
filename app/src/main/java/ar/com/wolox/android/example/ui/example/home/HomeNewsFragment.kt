@@ -7,12 +7,14 @@ import ar.com.wolox.android.R
 import ar.com.wolox.android.example.model.News
 import ar.com.wolox.android.example.ui.example.signup.SignUpActivity
 import ar.com.wolox.wolmo.core.fragment.WolmoFragment
+import ar.com.wolox.wolmo.core.util.ToastFactory
 import kotlinx.android.synthetic.main.fragment_home_news.*
 import java.util.LinkedList
 import javax.inject.Inject
 
 class HomeNewsFragment @Inject constructor() : WolmoFragment<HomeNewsPresenter>(), IHomeNewsView {
 
+    @Inject private lateinit var toastFactory: ToastFactory
     private val newsViewAdapter = HomeNewsViewAdapter()
     private val newsList = LinkedList<News>()
 
@@ -63,5 +65,13 @@ class HomeNewsFragment @Inject constructor() : WolmoFragment<HomeNewsPresenter>(
                 "Hardcoded new to test refresh", ArrayList()))
         onNewsGotFromDatabase(newestNews)
         vHomeNewsSwipeRefreshLayout.isRefreshing = false
+    }
+
+    override fun onInvalidCallError() {
+        toastFactory.show(R.string.invalid_call_error_toast)
+    }
+
+    override fun onServerError() {
+        toastFactory.show(R.string.server_error_toast)
     }
 }

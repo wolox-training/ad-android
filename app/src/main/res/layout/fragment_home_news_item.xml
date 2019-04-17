@@ -15,8 +15,8 @@
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/vHomeNewsItemImageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/home_news_item_image_size"
+            android:layout_height="@dimen/home_news_item_image_size"
             android:layout_margin="@dimen/spacing_large"
             android:layout_gravity="start|center_vertical"
             android:contentDescription="@string/fragment_home_news_item_image_description"/>

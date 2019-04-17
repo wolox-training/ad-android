@@ -22,11 +22,11 @@ class HomeNewsPresenter @Inject constructor() : BasePresenter<IHomeNewsView>() {
                     }
 
                     override fun onCallFailure(throwable: Throwable) {
-                        // TODO: if is necessary, we can call a function on view to make a Toast
+                        view.onInvalidCallError()
                     }
 
                     override fun onResponseFailed(body: ResponseBody?, code: Int) {
-                        // TODO: if is necessary, we can call a function on view to make a Toast
+                        view.onServerError()
                     }
                 }
         )
@@ -42,11 +42,11 @@ class HomeNewsPresenter @Inject constructor() : BasePresenter<IHomeNewsView>() {
                     }
 
                     override fun onCallFailure(throwable: Throwable) {
-                        // TODO: if is necessary, we can call a function on view to make a Toast
+                        view.onInvalidCallError()
                     }
 
                     override fun onResponseFailed(body: ResponseBody?, code: Int) {
-                        // TODO: if is necessary, we can call a function on view to make a Toast
+                        view.onServerError()
                     }
                 }
         )
